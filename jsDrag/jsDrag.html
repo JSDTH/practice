@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: deepskyblue;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">ssssssssssss</div>
+    <script>
+        var box = document.querySelector('.box');
+
+        box.addEventListener('mousedown',function (e) {
+//            1/鼠标点击下去之后获取鼠标移动的坐标值；
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            document.addEventListener('mousemove',move);
+//            3/鼠标弹起的时候删除鼠标
+            document.addEventListener('mouseup',remove);
+//            2/用当前鼠标的坐标值减去原始鼠标的坐标值；（为了让移动的时候鼠标指针在中间）
+            function move(e) {
+                box.style.left = e.pageX - x + 'px';
+                box.style.top = e.pageY - y + 'px';
+            }
+
+            function remove(e) {
+                document.removeEventListener('mousemove',move);
+//                4/**鼠标弹起之后删除弹起自身是为了不占用内存；
+                document.removeEventListener('mouseup',remove);
+            }
+//            5/清除浏览器默认样式，使文字不能被选中；
+            e.preventDefault();
+        });
+
+
+
+
+    </script>
+</body>
+</html>
