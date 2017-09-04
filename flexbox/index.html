@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .box {
+            height: 200px;
+            border: 1px solid #000;
+            text-align: center;
+            /* 新版 */
+            /* display: flex; */
+            /* 设置主轴方向 */
+            /* flex-direction: row; */
+            /* 反序 */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column-reverse;  */
+
+            /* 富裕空间 */
+                /* X轴 */
+            /* justify-content: flex-start;      元素在主轴起始位置,富裕空间在主轴结束位置  */
+            /* justify-content: flex-end;        元素在主轴结束位置,富裕空间在主轴起始位置  */
+            /* justify-content: center;          元素在主轴中间,富裕空间在主轴两侧  */
+            /* justify-content: space-between;   元素在主轴两侧,富裕空间平分;   */
+            /* justify-content: space-around;   富裕空间平均分配在元素两侧;    */
+                /* Y轴 */
+            /* align-items: 参数同X轴; */
+                            
+
+
+
+            /* 老版 */
+             display: -webkit-box;   
+            /* 主轴方向 */
+             -webkit-box-orient: horizontal; 
+            /* -webkit-box-orient: vertical; */
+            /* 反序 */
+            /* -webkit-box-direction: normal; */
+            /* -webkit-box-direction: reverse;             */
+
+            /* 富裕空间 */
+              /* X轴 */
+            /* -webkit-box-pack: start;        元素在主轴起始位置,富裕空间在主轴结束位置   */
+            /* -webkit-box-pack: end;          元素在主轴结束位置,富裕空间在主轴起始位置  */
+            /* -webkit-box-pack: center;       元素在主轴中间,富裕空间在主轴两侧  */
+            /* -webkit-box-pack: justify;      元素在主轴两侧,富裕空间平分*/
+            /* Y轴 */
+             /* -webkit-box-align: 参数同上,但是没有justify;  */
+
+        }
+
+        .box div {
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+            color: #fff;
+            background: red;
+            /* 定义盒子的弹性空间; */
+            /* 新版 */
+            /* flex-grow: 1;  */
+            /* 元素的具体位置 */
+            /* order: 正负值,数值越小越靠前; */
+
+
+            /* 定义盒子的弹性空间; */
+            /* 老版 */
+            /* -webkit-box-flex: 1; */
+            /* 元素的具体位置 */
+            /* -webkit-box-ordinal: 最小值为1,0和负数默认处理为1; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+
+</html>
